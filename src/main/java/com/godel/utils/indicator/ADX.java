@@ -62,6 +62,7 @@ public class ADX {
         }
     }
 
+    // TODO: Terminare
     public void update(){
 
     }

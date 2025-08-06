@@ -3,6 +3,7 @@ package com.godel.strategy;
 import java.util.List;
 import com.godel.repository.TradeRepository;
 import com.godel.repository.model.Candle;
+import com.godel.utils.indicator.ADX;
 import com.godel.utils.indicator.EMA;
 import com.godel.utils.indicator.VIX;
 import jakarta.enterprise.context.ApplicationScoped;
@@ -18,6 +19,7 @@ public class Phoenix {
     private final int emaP5 = 200;
     private final int smallerTfInitializeIndicatorIndex = 500;
     private final int biggerTfInitializeIndicatorIndex = smallerTfInitializeIndicatorIndex / 2;
+    private final int adxPeriod = 14;
 
     private boolean tradeIsOpen = false;
     private String tradeType = "";
@@ -27,12 +29,14 @@ public class Phoenix {
 
     private final EMA ema;
     private final VIX vix;
+    private final ADX adx;
     private final StrategyUtils utils;
     private final TradeRepository tradeRepository;
 
-    public Phoenix(EMA ema, VIX vix, StrategyUtils utils, TradeRepository tradeRepository){
+    public Phoenix(EMA ema, VIX vix, ADX adx, StrategyUtils utils, TradeRepository tradeRepository){
         this.ema = ema;
         this.vix = vix;
+        this.adx = adx;
         this.utils = utils;
         this.tradeRepository = tradeRepository;
     }
@@ -54,5 +58,6 @@ public class Phoenix {
         ema.initialize(smallTfCandles, emaP4);
         ema.initialize(bigTfCandles, emaP5);
         vix.initialize(smallTfCandles);
+        adx.initialize(bigTfCandles, adxPeriod);
     }
 }

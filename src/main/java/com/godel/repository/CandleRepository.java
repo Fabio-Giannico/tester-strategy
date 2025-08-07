@@ -57,7 +57,7 @@ public class CandleRepository implements PanacheMongoRepository<Candle> {
             candle.setHighPrice(Double.parseDouble(c.getString(2)));
             candle.setLowPrice(Double.parseDouble(c.getString(3)));
             candle.setClosePrice(Double.parseDouble(c.getString(4)));
-            candle.setExchangedAssetQuantity(Double.parseDouble(c.getString(5)));
+            candle.setVolume(Double.parseDouble(c.getString(5)));
             candle.setCloseTime(c.getLong(6));
             candle.setExchangedCurrencyQuantity(Double.parseDouble(c.getString(7)));
             candle.setnTrades(c.getInt(8));
@@ -78,7 +78,7 @@ public class CandleRepository implements PanacheMongoRepository<Candle> {
         candle.setHighPrice(doc.getDouble("high_price"));
         candle.setLowPrice(doc.getDouble("low_price"));
         candle.setClosePrice(doc.getDouble("close_price"));
-        candle.setExchangedAssetQuantity(doc.getDouble("exchanged_asset_quantity"));
+        candle.setVolume(doc.getDouble("exchanged_asset_quantity"));
         candle.setCloseTime(doc.getLong("close_time"));
         candle.setExchangedCurrencyQuantity(doc.getDouble("exchanged_currency_quantity"));
         candle.setnTrades(doc.getInteger("n_trades"));

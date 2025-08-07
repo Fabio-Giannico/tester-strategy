@@ -113,7 +113,7 @@ public class ADX {
         }
     }
 
-    public double getAdx() {
+    public double get() {
         return adx;
     }
 }

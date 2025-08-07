@@ -3,7 +3,6 @@ package com.godel.resource;
 import com.godel.service.CandleService;
 import com.godel.service.StrategyService;
 import com.godel.utils.database.RedisService;
-
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;
@@ -48,7 +47,6 @@ public class BotResource {
     public Response getRedisData() throws Exception {
         redisService.getValue("Balance");
         System.out.println("Redis value: " + redisService.getValue("Balance"));
-
         return Response.ok().build();
     }
 }

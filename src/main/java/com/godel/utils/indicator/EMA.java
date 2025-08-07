@@ -39,7 +39,7 @@ public class EMA {
         emaMap.put(period, newEma);
     }
 
-    public double getEma(int period) {
+    public double get(int period) {
         Double ema = emaMap.get(period);
         if (ema == null) {
             throw new IllegalStateException("EMA non inizializzata per il periodo " + period);

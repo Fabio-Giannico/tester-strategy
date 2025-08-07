@@ -17,7 +17,7 @@ public class Candle extends PanacheMongoEntity  {
     @BsonProperty("close_price")
     private double closePrice;
     @BsonProperty("exchanged_asset_quantity")
-    private double exchangedAssetQuantity;
+    private double volume;
     @BsonProperty("close_time")
     private long closeTime;
     @BsonProperty("exchanged_currency_quantity")
@@ -38,14 +38,14 @@ public class Candle extends PanacheMongoEntity  {
     }
 
     public Candle(long openTime, double openPrice, double highPrice, double lowPrice, double closePrice,
-            double exchangedAssetQuantity, long closeTime, double exchangedCurrencyQuantity, int nTrades,
+            double volume, long closeTime, double exchangedCurrencyQuantity, int nTrades,
             double assetQuantityBoughtByTaker, double currencyQuantitySpentByTaker, int ignore) {
         this.openTime = openTime;
         this.openPrice = openPrice;
         this.highPrice = highPrice;
         this.lowPrice = lowPrice;
         this.closePrice = closePrice;
-        this.exchangedAssetQuantity = exchangedAssetQuantity;
+        this.volume = volume;
         this.closeTime = closeTime;
         this.exchangedCurrencyQuantity = exchangedCurrencyQuantity;
         this.nTrades = nTrades;
@@ -96,12 +96,12 @@ public class Candle extends PanacheMongoEntity  {
         this.closePrice = closePrice;
     }
 
-    public double getExchangedAssetQuantity() {
-        return exchangedAssetQuantity;
+    public double getVolume() {
+        return volume;
     }
 
-    public void setExchangedAssetQuantity(double exchangedAssetQuantity) {
-        this.exchangedAssetQuantity = exchangedAssetQuantity;
+    public void setVolume(double volume) {
+        this.volume = volume;
     }
 
     public long getCloseTime() {

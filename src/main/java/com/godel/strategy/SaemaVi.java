@@ -51,10 +51,10 @@ public class SaemaVi {
             ema.updateEma(p4, current);
             vix.update(current);
 
-            double ema1 = ema.getEma(p1);
-            double ema2 = ema.getEma(p2);
-            double ema3 = ema.getEma(p3);
-            double ema4 = ema.getEma(p4);
+            double ema1 = ema.get(p1);
+            double ema2 = ema.get(p2);
+            double ema3 = ema.get(p3);
+            double ema4 = ema.get(p4);
             double vIndex = vix.get();
 
 
